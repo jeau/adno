@@ -46,6 +46,8 @@ class AdnoEditor extends Component {
                 }
             }
 
+            console.log(this.props.annotations)
+
             OpenSeadragon.setString("Tooltips.FullPage", this.props.t('editor.fullpage'));
             OpenSeadragon.setString("Tooltips.Home", this.props.t('editor.home'));
             OpenSeadragon.setString("Tooltips.ZoomIn", this.props.t('editor.zoom_in'));
@@ -62,7 +64,9 @@ class AdnoEditor extends Component {
                 tileSources: tileSources,
                 prefixUrl: 'https://cdn.jsdelivr.net/gh/Benomrans/openseadragon-icons@main/images/',
                 // Enable rotation
+                toolbar: "toolbar-osd",
                 showRotationControl: this.props.rotation,
+		showFullPageControl: false,
             }), {
                 locale: 'auto',
                 drawOnSingleClick: true,
@@ -186,9 +190,10 @@ class AdnoEditor extends Component {
     render() {
         return (
             <div>
-                <div id="toolbar-container"></div>
-                <div id="openseadragon1"></div>
-
+                <div id="openseadragon1">
+                    <div id="toolbar-container"></div>
+                    <div id="toolbar-osd"></div>
+		</div>
                 {
                     this.state.isMovingItem &&
                     <button className="btn btn-lg move-btn" onClick={() => this.validateMove()}>

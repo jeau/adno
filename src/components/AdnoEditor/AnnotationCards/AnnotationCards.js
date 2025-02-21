@@ -30,10 +30,10 @@ class AnnotationCards extends Component {
             if (Array.isArray(annotation.body) && annotation.body.find(annoBody => annoBody.type === "HTMLBody") && annotation.body.find(annoBody => annoBody.type === "HTMLBody").value !== "") {
                 return parse(annotation.body.find(annoBody => annoBody.type === "HTMLBody").value)
             } else {
-                return <span class="no-content">Ø {this.props.t('annotation.no_content')}</span>
+                return <span className="no-content">Ø {this.props.t('annotation.no_content')}</span>
             }
         } else {
-            return <span class="no-content">Ø {this.props.t('annotation.no_content')}</span>
+            return <span className="no-content">Ø {this.props.t('annotation.no_content')}</span>
         }
     }
 
@@ -150,7 +150,7 @@ class AnnotationCards extends Component {
                                                     <FontAwesomeIcon icon={faBullseye} />
                                                 </div>
                                             </button>
-                                            {index < this.props.annotations.length - 1 ? <button className="btn btn-sm btn-outline" onClick={() => this.annoSwitchDown(index)}>
+                                            {index < this.props.annotations.length - 1 ? <button className="btn btn-sm btn-outline bg-white" onClick={() => this.annoSwitchDown(index)}>
                                                 <div className="tooltip tooltip-bottom z-50" data-tip={this.props.t('annotation.switch_down')}>
                                                     <FontAwesomeIcon icon={faDownLong} />
                                                 </div>
@@ -160,7 +160,7 @@ class AnnotationCards extends Component {
                                                     <FontAwesomeIcon icon={faUpLong} />
                                                 </div>
                                             </button> : <></>}
-                                            <button className="btn btn-sm btn-outline btn-error" onClick={() => this.deleteAnnotation(annotation.id)}>
+                                            <button className="btn btn-sm btn-outline btn-error bg-white" onClick={() => this.deleteAnnotation(annotation.id)}>
                                                 <div className="tooltip tooltip-bottom z-50" data-tip={this.props.t('annotation.delete')}>
                                                     <FontAwesomeIcon icon={faTrashAlt} />
                                                 </div>
