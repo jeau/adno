@@ -6,8 +6,8 @@
     --adno-main-color: #075985; /* Sky 800 */
     --adno-second-color: #0284C7; /* Sky 600 */ 
     --adno-background: #FAFAFA; /* Neutral 50 */
-    --adno-edit-color: #F97316;  /* Orange 500 */
-    --adno-view-color: #84CC16; /* Lime 500 */
+    --adno-edit-color: #DC143C;  /* Orange 500 */
+    --adno-view-color: #A3B18A; /* Lime 500 */
 }
 
 .debug {
@@ -72,7 +72,11 @@ ul {
 
 footer{
     position: fixed;
-    top: calc(100vh - 52px)
+    bottom: 0;
+}
+
+footer {
+    row-gap: inherit !important;
 }
 
 .a9s-annotationlayer .outline-1px .a9s-inner {
