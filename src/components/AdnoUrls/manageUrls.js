@@ -3,7 +3,7 @@ import { buildJsonProjectWithManifest, enhancedFetch, generateUUID, get_url_exte
 
 function isJsonContentType(contentType) {
     const jsonPattern = /^(application\/(vnd\.api\+json|ld\+json|x-json-stream|json)(;.*)?|text\/json)$/i;
-    return jsonPattern.test(contentType.trim());
+    return jsonPattern.test(contentType.trim()) || contentType === 'application/octet-stream';
 }
 
 export async function manageUrls(props, url, translation, step = "decoreURIComponent") {
@@ -20,6 +20,7 @@ export async function manageUrls(props, url, translation, step = "decoreURICompo
     if (isIpfsUrl && !url.startsWith(IPFS_GATEWAY)) url = IPFS_GATEWAY + url;
 
     if (url.startsWith('http') || url.startsWith("https")) {
+        console.log('call with', step === "decoreURIComponent" ? decodeURIComponent(url) : url)
         return enhancedFetch(step === "decoreURIComponent" ? decodeURIComponent(url) : url)
             .then(rawReponse => {
                 if (rawReponse.response.ok) {
