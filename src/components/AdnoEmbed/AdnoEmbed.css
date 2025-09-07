@@ -1,11 +1,6 @@
 #adno-embed {
     width: 100vw;
     height: calc(100vh);
-    cursor: none;
-}
-
-#adno-embed .a9s-annotation, #adno-embed  .a9s-outer, #adno-embed  .a9s-inner {
-    display: none;
 }
 
 .adno-embed-anno-fullscreen{
