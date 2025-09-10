@@ -314,7 +314,7 @@ export function getAllProjectsFromLS() {
 // Set default settings for any ADNO project
 export function defaultProjectSettings() {
   return {
-    delay: 5,
+    delay: 6,
     showNavigator: true,
     toolsbarOnFs: true,
     sidebarEnabled: true,
@@ -326,7 +326,7 @@ export function defaultProjectSettings() {
     outlineWidth: "outline-1px",
     outlineColor: "outline-white",
     outlineColorFocus: "outline-focus-yellow",
-    showOutlines: true,
+    showOutlines: false,
     showEyes: false,
     soundMode: 'no_sound'
   }
