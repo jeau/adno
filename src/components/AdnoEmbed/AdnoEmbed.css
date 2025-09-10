@@ -3,6 +3,10 @@
     height: calc(100vh);
 }
 
+.a9s-annotationlayer {
+    display: none;
+}
+
 .adno-embed-anno-fullscreen{
     position: absolute;
     z-index: 10000;
